@@ -1,5 +1,4 @@
 import Chat from './component/chat';
-import './App.css';
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import axios from "axios";
+import '../App.css';
 
 const Chat = () => {
     const [list, setlist] = useState([]);
@@ -12,9 +13,10 @@ const Chat = () => {
         const storedList = localStorage.getItem("list");
         if (storedList) {
             setlist(JSON.parse(storedList));
-            console.log(list);
+            console.log(JSON.parse(storedList)); // Sử dụng storedList thay vì list ở đây
         }
     }, [])
+    
 
     useEffect(() => {
         if (list.length !== 0) {
@@ -57,9 +59,9 @@ const Chat = () => {
                                 <div className="chat-header clearfix">
                                     <div className="row">
                                         <div className="col-lg-6">
-                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                            {/* <a href="#" data-toggle="modal" data-target="#view_info"> */}
                                                 <img src="https://res.cloudinary.com/dqsjc7ny3/image/upload/v1715582737/lab4/Gemini_Generated_Image_zdb2uzzdb2uzzdb2_qkhywq.jpg" alt="avatar" />
-                                            </a>
+                                            {/* </a> */}
                                             <div className="chat-about">
                                                 <h6 className="m-b-0">Copilot</h6>
                                                 <small>Last seen: 2 hours ago</small>
