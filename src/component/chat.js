@@ -49,7 +49,7 @@ const Chat = () => {
     };
     return (
         <>
-            <div className="container">
+            <div className="container body">
                 <div className="row clearfix">
                     <div className="col-lg-12">
                         <div className="card chat-app">
@@ -61,7 +61,7 @@ const Chat = () => {
                                                 <img src="https://res.cloudinary.com/dqsjc7ny3/image/upload/v1715582737/lab4/Gemini_Generated_Image_zdb2uzzdb2uzzdb2_qkhywq.jpg" alt="avatar" />
                                             </a>
                                             <div className="chat-about">
-                                                <h6 className="m-b-0">Compilot</h6>
+                                                <h6 className="m-b-0">Copilot</h6>
                                                 <small>Last seen: 2 hours ago</small>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@ const Chat = () => {
                                     </ul>
                                 </div>
                                 <div className="chat-message clearfix ">
-                                    <div className="input-group mb-0 ">
+                                    <form className="input-group mb-0 " onSubmit={handleMessageSend}>
                                         <input
                                             type="text"
                                             className="form-control "
@@ -93,14 +93,14 @@ const Chat = () => {
                                             value={message}
                                             onChange={(e) => setMessage(e.target.value)}
                                         />
-                                        <button className="btn btn-primary " type="button" onClick={handleMessageSend} disabled={isLoading}>
+                                        <button className="btn btn-primary " type="submit" onClick={handleMessageSend} disabled={isLoading}>
                                             {isLoading ? (
                                                 <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                             ) : (
                                                 "Send"
                                             )}
                                         </button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
