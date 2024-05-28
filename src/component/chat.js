@@ -16,7 +16,7 @@ const Chat = () => {
             console.log(JSON.parse(storedList)); // Sử dụng storedList thay vì list ở đây
         }
     }, [])
-    
+
 
     useEffect(() => {
         if (list.length !== 0) {
@@ -60,7 +60,7 @@ const Chat = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             {/* <a href="#" data-toggle="modal" data-target="#view_info"> */}
-                                                <img src="https://res.cloudinary.com/dqsjc7ny3/image/upload/v1715582737/lab4/Gemini_Generated_Image_zdb2uzzdb2uzzdb2_qkhywq.jpg" alt="avatar" />
+                                            <img src="https://res.cloudinary.com/dqsjc7ny3/image/upload/v1715582737/lab4/Gemini_Generated_Image_zdb2uzzdb2uzzdb2_qkhywq.jpg" alt="avatar" />
                                             {/* </a> */}
                                             <div className="chat-about">
                                                 <h6 className="m-b-0">Copilot</h6>
@@ -80,7 +80,8 @@ const Chat = () => {
                                                     <div className="message-data">
                                                         <img src="https://res.cloudinary.com/dqsjc7ny3/image/upload/v1715582737/lab4/Gemini_Generated_Image_zdb2uzzdb2uzzdb2_qkhywq.jpg" alt="avatar" />
                                                     </div>
-                                                    <div className="message my-message">{item?.answer}</div>
+                                                    <span className="message my-message" dangerouslySetInnerHTML={{ __html: item?.answer }}></span>
+                                                    {/* <div className="message my-message">{item?.answer}</div> */}
                                                 </li>
                                             </>
                                         ))}

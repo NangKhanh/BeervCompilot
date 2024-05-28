@@ -213,7 +213,9 @@ body {
   clear: both;
   height: 0
 }
-
+.chat-app{
+  width: 1300px ;
+}
 @media only screen and (max-width: 767px) {
   .chat-app .people-list {
     height: 465px;
@@ -279,4 +281,13 @@ body {
 .body {
   display: flex;
   align-items: center;
+}
+.my-message li{
+  margin-bottom: 10px !important;
+  list-style: circle !important;
+  /* padding-left: 10px; */
+}
+
+.my-message {
+  padding-left: 30px !important;
 }
